@@ -44,14 +44,11 @@ module.exports = (sequelize, DataTypes) => {
 
         console.log("lokal fra_konto: " + this.toString());
         console.log("lokal til_konto: " + til_konto.toString());
-        misc.pressAnyKey("Trykk enter for å lagre endringer i basen.");
-        try{
-            await this.save();
-            await til_konto.save();
-        }
-        catch(e){
-            throw e;
-        }
+
+        await misc.pressAnyKey("Trykk enter for å lagre endringer i basen.");
+
+        return this.save()
+            .then(() => til_konto.save());
 
     };
 
