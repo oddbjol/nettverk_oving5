@@ -1,4 +1,3 @@
-let Sequelize = require('sequelize');
 let sequelize = require('./sequelize.js');
 
 const Konto = sequelize.import('Konto');

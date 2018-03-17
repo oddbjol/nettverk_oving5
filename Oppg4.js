@@ -1,4 +1,3 @@
-let Sequelize = require('sequelize');
 let sequelize = require('./sequelize_with_locking.js');
 
 const Konto = sequelize.import('Konto');
